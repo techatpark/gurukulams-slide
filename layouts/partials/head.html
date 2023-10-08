@@ -1,0 +1,27 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ default .Summary .Description }}">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark">
+
+
+{{- template "_internal/opengraph.html" . -}}
+
+<title>{{ .Site.Title -}}</title>
+
+<link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
+
+{{- range .Translations }}
+  <link rel="alternate" hreflang="{{ default .Language.Lang .Site.LanguageCode }}" href="{{ .Permalink }}" title="{{ .Site.Title -}}">
+{{- end -}}
+
+{{- template "_internal/google_analytics.html" . -}}
+
+
+{{- define "integrity" -}}
+  {{- if (urls.Parse .Permalink).Host -}}
+    integrity="{{ .Data.Integrity }}" crossorigin="anonymous"
+  {{- end -}}
+{{- end -}}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js" integrity="sha512-TC5IA+BA/5YPBb/MJyk97ypzvXYUIlAksfuxlUXlhD7cM7y/stM4JuytDeYJlsiKxmRDV5krDyuugOoMOHwyJg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

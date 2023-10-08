@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ default .Site.Language.Lang .Site.LanguageCode  }}" dir="{{ default "ltr" .Site.Language.LanguageDirection }}">
+<head>
+    {{ partial "head" . }}
+</head>
+<body dir="{{ default "ltr" .Site.Language.LanguageDirection }}">
+    <div class="reveal">
+{{.Content}}
+</div>
+
+{{ partial "footer" . }}
+
+</body>
+</html>

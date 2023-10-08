@@ -1,2 +1,6 @@
-# gurukulams-slide
-Theme for Gurukulams slides
+### Setup
+
+```
+cd sample-slides
+hugo server --ignoreCache --themesDir ../..
+```
